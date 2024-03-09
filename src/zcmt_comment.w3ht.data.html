@@ -1,0 +1,20 @@
+<div class="d-flex flex-start mb-4">
+	<img class="rounded-circle shadow-1-strong me-3" src="https://ui-avatars.com/api/?name=#avatar_name#&background=random" alt = "avatar" height="50" />
+	<div class="card w-100">
+		<div class="card-body p-4">
+			<div class="">
+				<h6>#comment_author#</h6>
+				<p class="small">#comment_subtitle#</p>
+				<p>#comment_text#</p>
+				<div class="small d-flex justify-content-start">
+					<a href="SAPEVENT:#like_event#?#like_param#" class="d-flex align-items-center me-3">
+						#if[already_upvoted]<i class="fas fa-thumbs-up me-2" style="margin-top: -0.16rem;"></i>
+						#if[to_upvote]<i class="far fa-thumbs-up me-2" style="margin-top: -0.16rem;"></i>
+						<p class="small text-muted mb-0">#upvotes#</p>
+					</a>
+					#if[own_comment]<a class="d-flex align-items-center me-3" href="SAPEVENT:DELETE?#delete_param#"><i class="far fa-trash-can"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

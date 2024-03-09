@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_INTF" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOINTERF>
+    <CLSNAME>ZIF_CMT_SYSTEM</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Comment Section</DESCRIPT>
+    <EXPOSURE>2</EXPOSURE>
+    <STATE>1</STATE>
+    <UNICODE>X</UNICODE>
+   </VSEOINTERF>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_COMMENT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Add new comment</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DELETE_COMMENT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Delete a comment</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DISLIKE_COMMENT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Dislike a comment</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DISLPLAY_IN_CONTAINERS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Display in containers</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DISPLAY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Display pop-up</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FREE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Free containers</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LIKE_COMMENT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Like a comment</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LOAD_THEME</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Load a theme</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MARK_AS_READ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Mark a comment as read</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>NOTIFY_TO_READ</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get number of comments unread</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>RENDER_COMMENTS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Render comments</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>RENDER_TEXTAREA</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Render textarea</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_COMMENT</CMPNAME>
+     <SCONAME>COMMENT_ID</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>16 byte UUID in 26 chars (usually Base 32 encoded)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DISLIKE_COMMENT</CMPNAME>
+     <SCONAME>COMMENT_ID</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>16 byte UUID in 26 chars (usually Base 32 encoded)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LIKE_COMMENT</CMPNAME>
+     <SCONAME>COMMENT_ID</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>16 byte UUID in 26 chars (usually Base 32 encoded)</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

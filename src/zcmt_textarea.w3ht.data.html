@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
+		<style>
+			body { -moz-transform: scale(0.8, 0.8); zoom: 0.8; zoom: 80%;}
+		</style>
+	</head>
+	<body>
+		<div class="col-md-12 col-lg-10 col-xl-8">
+			<div class="card">
+				<div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
+					<form name="INPUT" method="post" action="SAPEVENT:INPUT">
+						<div class="d-flex flex-start w-100">
+							<img class="rounded-circle shadow-1-strong me-3" src="https://ui-avatars.com/api/?name=#avatar_name#&background=random" alt ="avatar" width="40" height="40" />
+							<div class="form-outline w-100">
+								<textarea name="comment" class="form-control" id="textArea" rows="4" style="background: #fff;"></textarea>
+							</div>
+						</div>
+						<div class="float-end mt-2 pt-1">
+							<input type="submit" name="send" class="btn btn-primary btn-sm" value="Invia">
+							<button type="button" onclick="ClearTextArea();" class="btn btn-outline-primary btn-sm">Cancella</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
+	</body>
+</html>
