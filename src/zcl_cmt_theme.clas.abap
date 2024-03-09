@@ -40,10 +40,14 @@ CLASS zcl_cmt_theme DEFINITION
 ENDCLASS.
 
 
-CLASS zcl_cmt_theme IMPLEMENTATION.
+
+CLASS ZCL_CMT_THEME IMPLEMENTATION.
+
+
   METHOD constructor.
     _load_templates( ).
   ENDMETHOD.
+
 
   METHOD get.
     IF m_instance IS INITIAL.
@@ -55,9 +59,11 @@ CLASS zcl_cmt_theme IMPLEMENTATION.
     result = m_instance.
   ENDMETHOD.
 
+
   METHOD get_manager.
     result = zcl_cmt_manager=>get_manager( ).
   ENDMETHOD.
+
 
   METHOD zif_cmt_theme~render_comments.
     DATA(comment_template_lines) = VALUE string_table( FOR _ctemp IN m_template-comment_template
@@ -84,20 +90,20 @@ CLASS zcl_cmt_theme IMPLEMENTATION.
     ENDLOOP.
   ENDMETHOD.
 
+
   METHOD zif_cmt_theme~render_textarea.
-    DATA(textarea_template_lines) = VALUE string_table( FOR _xtemp IN m_template-textarea_template
-                                                        ( CONV #( _xtemp-html ) ) ).
+    result = m_template-textarea_template.
 
     DATA(user_full_name) = get_manager( )->get_user_full_name( sy-uname ).
     DATA(avatar_name)    = replace( val  = user_full_name
                                     sub  = ` `
                                     with = `+` ).
 
-    result = VALUE #( FOR _line IN textarea_template_lines
-                      ( html = replace( val  = _line
-                                        sub  = `#avatar_name#`
-                                        with = avatar_name ) ) ).
+    REPLACE ALL OCCURRENCES OF `#avatar_name#`  IN TABLE result WITH avatar_name.
+    REPLACE ALL OCCURRENCES OF `#label_send#`   IN TABLE result WITH TEXT-l01.
+    REPLACE ALL OCCURRENCES OF `#label_cancel#` IN TABLE result WITH TEXT-l02.
   ENDMETHOD.
+
 
   METHOD _load_templates.
     IMPORT html = m_template-section_template FROM DATABASE wwwdata(ht) ID 'ZCMT_SECTION'.
@@ -109,6 +115,7 @@ CLASS zcl_cmt_theme IMPLEMENTATION.
     IMPORT html = m_template-textarea_template FROM DATABASE wwwdata(ht) ID 'ZCMT_TEXTAREA'.
     REPLACE ALL OCCURRENCES OF cl_abap_char_utilities=>horizontal_tab IN TABLE m_template-textarea_template WITH ``.
   ENDMETHOD.
+
 
   METHOD _render_comment.
     DATA(comment_text)    = cl_abap_codepage=>convert_from( comment_data-comment_text ).
