@@ -28,7 +28,7 @@ If you use the SAP GUI, in order to properly display the css style, I suggest yo
 
 ## Features
 1. Any user can like any comment
-2. Each user can delete its own comment
+2. Each user can delete their own comment
 3. Comment author name is the user full name (if empty, the user id will be used)
 4. The avatar contains user name initials with a random background
 5. Get the number of unread comments by calling `comment_system->notify_to_read( )`, so you can e.g. trigger the comment by means of a button with dynamic text "Comment (3 to read)" or something like this
