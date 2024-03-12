@@ -1,7 +1,7 @@
 # ABAP Comment System
 
 Attach a commenting system to any SAP application/object/transaction. <BR />
-Let the users chat about documents, take note and like comments as in a blog post comments feed.
+Let the users chat about documents, take note, reply and like comments as in a blog post comments feed.
 
 ## Requirements
 v7.40 SP08
@@ -31,8 +31,9 @@ If you use the SAP GUI, in order to properly display the css style, I suggest yo
 2. Each user can delete their own comment
 3. Comment author name is the user full name (if empty, the user id will be used)
 4. The avatar contains user name initials with a random background
-5. Get the number of unread comments by calling `comment_system->notify_to_read( )`, so you can e.g. trigger the comment by means of a button with dynamic text "Comment (3 to read)" or something like this
-6. Don't you like pop-ups? Create a custom container for comment section and a custom container for textarea, then display comments by calling
+5. Main comments can have replies, and replies can be exploded or collapsed
+6. Get the number of unread comments by calling `comment_system->notify_to_read( )`, so you can e.g. trigger the comment by means of a button with dynamic text "Comment (3 to read)" or something like this
+7. Don't you like pop-ups? Create a custom container for comment section and a custom container for textarea, then display comments by calling
    ```abap
    comment_system->display_in_container(
      section_container   = `C_SECTION`
