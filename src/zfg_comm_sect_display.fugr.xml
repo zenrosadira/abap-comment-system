@@ -29,7 +29,7 @@
       <RSFDO>
        <PARAMETER>I_COMMENT_SYSTEM</PARAMETER>
        <KIND>P</KIND>
-       <STEXT>Comment Section</STEXT>
+       <STEXT>Comment System</STEXT>
       </RSFDO>
       <RSFDO>
        <PARAMETER>I_SETTINGS</PARAMETER>
@@ -49,6 +49,7 @@
       <NEXTSCREEN>0100</NEXTSCREEN>
       <LINES>059</LINES>
       <COLUMNS>094</COLUMNS>
+      <KEEP_SCPOS>X</KEEP_SCPOS>
       <FIORIENLARGEOFF>X</FIORIENLARGEOFF>
      </HEADER>
      <CONTAINERS>

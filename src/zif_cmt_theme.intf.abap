@@ -1,11 +1,19 @@
-INTERFACE zif_cmt_theme
-  PUBLIC.
+interface ZIF_CMT_THEME
+  public .
 
 
-  METHODS render_comments
-    IMPORTING !comments     TYPE zif_cmt_manager=>tt_comments
-    RETURNING VALUE(result) TYPE zif_cmt_manager=>tt_html_data.
-
-  METHODS render_textarea
-    RETURNING VALUE(result) TYPE zif_cmt_manager=>tt_html_data.
-ENDINTERFACE.
+  methods RENDER_COMMENTS
+    returning
+      value(RESULT) type ZIF_CMT_MANAGER=>TT_HTML_DATA .
+  methods RENDER_REPLY_TEXTAREA
+    importing
+      !PARENT_COMMENT type CLIKE
+    returning
+      value(RESULT) type ZIF_CMT_MANAGER=>TT_HTML_DATA .
+  methods RENDER_TEXTAREA
+    returning
+      value(RESULT) type ZIF_CMT_MANAGER=>TT_HTML_DATA .
+  methods RENDER_TEXTAREA_CARD
+    returning
+      value(RESULT) type ZIF_CMT_MANAGER=>TT_HTML_DATA .
+endinterface.

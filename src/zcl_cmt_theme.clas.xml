@@ -25,19 +25,38 @@
      <LENGTH>100</LENGTH>
     </item>
    </TPOOL>
+   <I18N_TPOOL>
+    <item>
+     <LANGUAGE>I</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>L01</KEY>
+       <ENTRY>Invia</ENTRY>
+       <LENGTH>100</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>L02</KEY>
+       <ENTRY>Cancella</ENTRY>
+       <LENGTH>100</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+   </I18N_TPOOL>
    <DESCRIPTIONS>
     <SEOCOMPOTX>
-     <CMPNAME>M_INSTANCE</CMPNAME>
+     <CMPNAME>M_SYSTEM</CMPNAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Comment Section | Theme</DESCRIPT>
+     <DESCRIPT>Comment Section</DESCRIPT>
     </SEOCOMPOTX>
    </DESCRIPTIONS>
    <DESCRIPTIONS_SUB>
     <SEOSUBCOTX>
-     <CMPNAME>GET</CMPNAME>
-     <SCONAME>RESULT</SCONAME>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>SYSTEM</SCONAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Comment Section | Theme</DESCRIPT>
+     <DESCRIPT>Comment Section</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>GET_MANAGER</CMPNAME>
@@ -46,10 +65,22 @@
      <DESCRIPT>Comment System | Manager</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
-     <CMPNAME>_RENDER_COMMENT</CMPNAME>
-     <SCONAME>COMMENT_TEMPLATE</SCONAME>
+     <CMPNAME>_INJECT_CONTENTS</CMPNAME>
+     <SCONAME>CONTENT</SCONAME>
      <LANGU>E</LANGU>
-     <DESCRIPT>Table of Strings</DESCRIPT>
+     <DESCRIPT>HTML Lines</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>_INJECT_CONTENTS</CMPNAME>
+     <SCONAME>HTML_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>HTML Lines</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>_INJECT_ELEMENT</CMPNAME>
+     <SCONAME>HTML_DATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>HTML Lines</DESCRIPT>
     </SEOSUBCOTX>
    </DESCRIPTIONS_SUB>
   </asx:values>

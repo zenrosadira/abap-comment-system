@@ -6,16 +6,54 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
 <style>
 body { -moz-transform: scale(0.8, 0.8); zoom: 0.8; zoom: 80%;}
+.sub-comments {
+	margin-bottom: 30px;
+}
+.sub-comment {
+	margin-left: 70px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+	padding-left: 10px;
+    border-left: 2px solid #ccc;
+}
 </style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		function HideReplyTextAreas() {
+			var reply_text_area_collection = document.getElementsByClassName("reply_text_area");
+			for (var i = 0; i < reply_text_area_collection.length; i++) {
+				reply_text_area_collection[i].setAttribute("style", "display: none");
+			};
+		};
+		
+		function Reply(event) {
+			HideReplyTextAreas( );
+			var id = event.getAttribute("data-comid");
+			document.getElementById("rta_" + id).setAttribute("style", "display: inherit");
+		};
+		
+		function ClearTextArea() {
+			HideReplyTextAreas( );
+		};
+		
+		$(document).ready(function () {
+			if (localStorage.getItem("cmt_system-quote-scroll") != null) {
+				$(window).scrollTop(localStorage.getItem("cmt_system-quote-scroll"));
+			}
+			$(window).on("scroll", function() {
+				localStorage.setItem("cmt_system-quote-scroll", $(window).scrollTop());
+			});
+		});
+	</script>
 </head>
 <body>
 <div class="container my-2 py-4 text-dark">
 <div class="row d-flex justify-content-center">
 <div class="col-md-11 col-lg-9 col-xl-7">
-#comments#
+<!--ABAP:comments:-->
 </div>
 </div>
 </div>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
+
 </body>
 </html>

@@ -1,30 +1,40 @@
-CLASS zcl_cmt_manager DEFINITION
-  PUBLIC FINAL
-  CREATE PRIVATE.
+class ZCL_CMT_MANAGER definition
+  public
+  final
+  create private .
 
-  PUBLIC SECTION.
-    INTERFACES zif_cmt_manager.
+public section.
 
-    CLASS-METHODS get_manager
-      RETURNING VALUE(result) TYPE REF TO zif_cmt_manager.
+  interfaces ZIF_CMT_MANAGER .
 
-  PRIVATE SECTION.
-    CLASS-DATA m_manager TYPE REF TO zif_cmt_manager.
+  class-methods GET_MANAGER
+    returning
+      value(RESULT) type ref to ZIF_CMT_MANAGER .
+protected section.
+private section.
 
-    DATA m_users_full_name TYPE zif_cmt_manager=>tt_users_name.
+  class-data M_MANAGER type ref to ZIF_CMT_MANAGER .
+  data M_USERS_FULL_NAME type ZIF_CMT_MANAGER=>TT_USERS_NAME .
 ENDCLASS.
 
 
-CLASS zcl_cmt_manager IMPLEMENTATION.
+
+CLASS ZCL_CMT_MANAGER IMPLEMENTATION.
+
+
   METHOD get_manager.
+
     IF m_manager IS NOT BOUND.
       m_manager = NEW zcl_cmt_manager( ).
     ENDIF.
 
     result = m_manager.
+
   ENDMETHOD.
 
+
   METHOD zif_cmt_manager~create_id.
+
     TRY.
 
         result = cl_system_uuid=>create_uuid_c26_static( ).
@@ -32,11 +42,11 @@ CLASS zcl_cmt_manager IMPLEMENTATION.
       CATCH cx_uuid_error.
 
     ENDTRY.
+
   ENDMETHOD.
 
+
   METHOD zif_cmt_manager~get_user_full_name.
-    DATA address TYPE bapiaddr3.
-    DATA ret     TYPE bapiret2_t.
 
     READ TABLE m_users_full_name ASSIGNING FIELD-SYMBOL(<user>) WITH KEY user_id = user_id.
 
@@ -44,6 +54,9 @@ CLASS zcl_cmt_manager IMPLEMENTATION.
 
       APPEND INITIAL LINE TO m_users_full_name ASSIGNING <user>.
       <user>-user_id = user_id.
+
+      DATA ret      TYPE bapiret2_t.
+      DATA address  TYPE bapiaddr3.
 
       CALL FUNCTION 'BAPI_USER_GET_DETAIL'
         EXPORTING
@@ -58,29 +71,40 @@ CLASS zcl_cmt_manager IMPLEMENTATION.
     ENDIF.
 
     result = <user>-user_name.
+
   ENDMETHOD.
+
 
   METHOD zif_cmt_manager~load_comments.
-    SELECT * FROM zcmt_comment_t
+
+    SELECT *
+      FROM zcmt_comment_t
       WHERE section_id = @section_id
       INTO TABLE @result.
+
   ENDMETHOD.
 
+
   METHOD zif_cmt_manager~load_readby.
+
     CHECK comments IS NOT INITIAL.
 
     SELECT * FROM zcmt_comread_t
       FOR ALL ENTRIES IN @comments
       WHERE comment_id = @comments-comment_id
       INTO TABLE @result.
+
   ENDMETHOD.
 
+
   METHOD zif_cmt_manager~load_upvotes.
+
     CHECK comments IS NOT INITIAL.
 
     SELECT * FROM zcmt_upvotes_t
       FOR ALL ENTRIES IN @comments
       WHERE comment_id = @comments-comment_id
       INTO TABLE @result.
+
   ENDMETHOD.
 ENDCLASS.

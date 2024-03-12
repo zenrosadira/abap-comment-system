@@ -37,9 +37,19 @@
      <DESCRIPT>Display pop-up</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
+     <CMPNAME>EXPLODE_SUBCOMMENTS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Like a comment</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
      <CMPNAME>FREE</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Free containers</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_COMMENTS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get all comments</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>LIKE_COMMENT</CMPNAME>
@@ -62,6 +72,11 @@
      <DESCRIPT>Get number of comments unread</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
+     <CMPNAME>OPEN_REPLY_AREA</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Open reply textarea</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
      <CMPNAME>RENDER_COMMENTS</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Render comments</DESCRIPT>
@@ -70,6 +85,11 @@
      <CMPNAME>RENDER_TEXTAREA</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Render textarea</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>REPLY</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Reply to a comment</DESCRIPT>
     </SEOCOMPOTX>
    </DESCRIPTIONS>
    <DESCRIPTIONS_SUB>
@@ -86,7 +106,25 @@
      <DESCRIPT>16 byte UUID in 26 chars (usually Base 32 encoded)</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
+     <CMPNAME>EXPLODE_SUBCOMMENTS</CMPNAME>
+     <SCONAME>COMMENT_ID</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>16 byte UUID in 26 chars (usually Base 32 encoded)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_COMMENTS</CMPNAME>
+     <SCONAME>RESULT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of comments</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
      <CMPNAME>LIKE_COMMENT</CMPNAME>
+     <SCONAME>COMMENT_ID</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>16 byte UUID in 26 chars (usually Base 32 encoded)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>OPEN_REPLY_AREA</CMPNAME>
      <SCONAME>COMMENT_ID</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>16 byte UUID in 26 chars (usually Base 32 encoded)</DESCRIPT>

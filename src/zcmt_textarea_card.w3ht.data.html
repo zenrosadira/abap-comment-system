@@ -1,0 +1,16 @@
+<div class="card /*ABAP:sub_comment:*/">
+	<div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
+		<form name="INPUT" method="post" action="SAPEVENT:INPUT?/*ABAP:parent_comment:*/">
+			<div class="d-flex flex-start w-100">
+				<img class="rounded-circle shadow-1-strong me-3" src="https://ui-avatars.com/api/?name=/*ABAP:avatar_name:*/&background=random" alt ="avatar" width="40" height="40" />
+				<div class="form-outline w-100">
+					<textarea name="comment" class="form-control" id="textArea" rows="/*ABAP:text_rows:*/" style="background: #fff;"></textarea>
+				</div>
+			</div>
+			<div class="float-end mt-2 pt-1">
+				<input type="submit" name="send" class="btn btn-primary btn-sm" value="/*ABAP:label_send:*/">
+				<button type="button" onclick="ClearTextArea();" class="btn btn-outline-primary btn-sm"><!--ABAP:label_cancel:--></button>
+			</div>
+		</form>
+	</div>
+</div>
