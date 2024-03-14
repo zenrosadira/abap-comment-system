@@ -7,7 +7,7 @@ Let the users chat about documents, take note, reply and like comments as in a b
 v7.40 SP08
 
 ## Usage
-Create a comment system object anywhere, using an `object_id` identifying the context to which the comments will be attached: it can be the transacion/application name, a key for a SAP document or a custom object,
+Create a comment system object anywhere, using an `object_id` identifying the context to which the comments will be attached: it can be the transaction/application name, a key for a SAP document or a custom object,
 it can a be a string but also a structure or a more complex object. Keep in mind: only one corresponding comment system will be loaded for each object id.
 
 ```abap
